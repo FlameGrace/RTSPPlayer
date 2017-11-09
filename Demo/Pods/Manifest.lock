@@ -1,0 +1,18 @@
+PODS:
+  - BytePacket (0.0.1)
+  - CocoaAsyncSocket (7.6.1)
+  - TimeOutHandle (0.0.1)
+
+DEPENDENCIES:
+  - BytePacket
+  - CocoaAsyncSocket
+  - TimeOutHandle
+
+SPEC CHECKSUMS:
+  BytePacket: 75933ddc81aca67b129f68ed0703a8a0e923979b
+  CocoaAsyncSocket: 7eadd3f59e1a6c84e2aefc93e9ff7b55156fe174
+  TimeOutHandle: fc3262e2fe2b63fdb4b37b228ad8c7c91247650d
+
+PODFILE CHECKSUM: 0d3c4861df95a6e447b7f333d6872f503c39889a
+
+COCOAPODS: 1.2.0.beta.3
