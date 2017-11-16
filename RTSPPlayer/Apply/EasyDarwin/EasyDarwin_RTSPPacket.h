@@ -11,7 +11,6 @@
 @interface EasyDarwin_RTSPPacket : BytePacket
 
 @property (copy, nonatomic) NSString *response;
-
-- (NSData *)remainData;
+@property (strong, nonatomic) NSData *remainData;  
 
 @end

@@ -78,6 +78,8 @@
             ok = [self singleDecodeWithError:error];
             break;
     }
+    //每个nalu包都是完整的，因此在下一个解析前，需要全部从buffer中移除
+    self.canBeSkippedLength = self.encodeData.length;
     return ok;
 }
 

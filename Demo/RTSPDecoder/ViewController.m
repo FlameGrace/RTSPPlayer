@@ -22,9 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self.reciever startRecieveVideo:@"rtsp://xxxx/xx.sdp"];
+    [self.reciever startRecieveVideo:@"rtsp://xxxx.xxx.sdp"];
 }
-
 
 - (void)RTSPReciever:(id<RTSPRecieverProtocol>)reciever didRecieveNewStream:(NSData *)newStream
 {

@@ -63,30 +63,25 @@
     id <BytePacketProtocol> packet = [[self.packetType alloc]init];
     packet.encodeData = singleBufferData;
     NSError *error = nil;
-    if([packet decodeWithError:&error])
+    [packet decodeWithError:&error];
+    //if lack data, wait next packet.
+    if(error && error.code == BytePacketLackDataErrorCode)
     {
-        if(self.bufferData.length < packet.encodeLength)
-        {
-            return NO;
-        }
-        [self.bufferData replaceBytesInRange:NSMakeRange(0, packet.encodeLength) withBytes:NULL length:0];
+        return NO;
+    }
+    //Remove data which can be skipped from buffer.
+    if(self.bufferData.length >= packet.canBeSkippedLength && packet.canBeSkippedLength > 0)
+    {
+        [self.bufferData replaceBytesInRange:NSMakeRange(0, packet.canBeSkippedLength) withBytes:NULL length:0];
+    }
+    if(!error)
+    {
         if([self.delegate respondsToSelector:@selector(bytePacketDecoder:decodeNewPacket:)])
         {
             [self.delegate bytePacketDecoder:self decodeNewPacket:packet];
         }
-        return YES;
     }
-    //如果因为数据长度不够而解码出错，读取的指针,下一次从find位置开始读
-    if(error.code == BytePacketLackDataErrorCode)
-    {
-        return NO;
-    }
-    else
-    {
-        [self.bufferData replaceBytesInRange:NSMakeRange(0, singleBufferData.length) withBytes:NULL length:0];
-        return YES;
-    }
-    
+    return YES;
 }
 
 - (NSMutableData *)bufferData

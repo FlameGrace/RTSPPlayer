@@ -21,8 +21,11 @@ typedef NS_ENUM(NSInteger, BytePacketErrorCode){
 
 //编码后的数据或需要解码的数据
 @property (strong ,nonatomic) NSData *encodeData;
-//编码后的数据长度或一个完整的可解码块的数据长度（在解码成功后必须计算并赋值）
-@property (assign, nonatomic) NSUInteger encodeLength;
+/*
+ 可以被解码器忽略的长度
+ The Length Can Be Skipped By Decoder From the Buffer。
+*/
+@property (assign, nonatomic) NSUInteger canBeSkippedLength;
 
 //解码
 - (BOOL)decodeWithError:(NSError **)error;

@@ -10,7 +10,7 @@
 
 @implementation BytePacket
 @synthesize encodeData = _encodeData;
-@synthesize encodeLength = _encodeLength;
+@synthesize canBeSkippedLength = _canBeSkippedLength;
 
 + (instancetype)packet
 {

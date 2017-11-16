@@ -20,8 +20,13 @@
 //小端
 + (long)lowBytesToLong:(Byte *)byte;
 
+
 /**
  从data中查找指定字节的数据，并返回第一次出现的位置，-1代表未找到
+
+ @param find sub data
+ @param data source data
+ @return position, -1: Not Found
  */
 + (NSInteger)findData:(NSData *)find firstPositionInData:(NSData *)data;
 

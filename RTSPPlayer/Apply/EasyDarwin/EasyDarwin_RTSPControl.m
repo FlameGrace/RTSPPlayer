@@ -29,7 +29,7 @@
                 remainData = [packet remainData];
             }
             [self gainNewResponse:packet.response firstVideoPayloadData:remainData];
-            [self.responseBuffer replaceBytesInRange:NSMakeRange(0, packet.encodeLength) withBytes:NULL length:0];
+            [self.responseBuffer replaceBytesInRange:NSMakeRange(0, packet.canBeSkippedLength) withBytes:NULL length:0];
             return;
         }
         if(error.code == BytePacketLackDataErrorCode)

@@ -24,12 +24,12 @@
     H264NaluBytePacket *packet = [[H264NaluBytePacket alloc] init];
     packet.encodeData = singleBufferData;
     NSError *error = nil;
-    if(![packet decodeWithError:&error])
+    [packet decodeWithError:&error];
+    [self.bufferData replaceBytesInRange:NSMakeRange(0, singleBufferData.length) withBytes:NULL length:0];
+    if(error)
     {
-        [self.bufferData replaceBytesInRange:NSMakeRange(0, singleBufferData.length) withBytes:NULL length:0];
         return YES;
     }
-    [self.bufferData replaceBytesInRange:NSMakeRange(0, singleBufferData.length) withBytes:NULL length:0];
     if(packet.naluTypeCode != H264NaluTypeFU_A && packet.naluTypeCode == H264NaluTypeFU_B)
     {
         if([self.delegate respondsToSelector:@selector(bytePacketDecoder:decodeNewPacket:)])
@@ -51,7 +51,6 @@
             {
                 [self.delegate bytePacketDecoder:self decodeNewPacket:packet];
             }
-            return YES;
         }
     }
     return YES;

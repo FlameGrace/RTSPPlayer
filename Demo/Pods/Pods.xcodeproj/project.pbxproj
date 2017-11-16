@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -75,22 +75,22 @@
 		4B0358A0B754AEE064D96A947597729B /* GCDAsyncSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncSocket.h; path = Source/GCD/GCDAsyncSocket.h; sourceTree = "<group>"; };
 		6262D36A523025420754ED09A227AE8D /* TimeOutHandleCenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TimeOutHandleCenter.m; path = TimeOutHandle/TimeOutHandleCenter.m; sourceTree = "<group>"; };
 		6B033D0D6AE953B97A2931B7B313A408 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncUdpSocket.h; path = Source/GCD/GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
-		76D3F8FE8ED0B402E74868DEE349DB8E /* libBytePacket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libBytePacket.a; path = libBytePacket.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		76D3F8FE8ED0B402E74868DEE349DB8E /* libBytePacket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBytePacket.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		774947FB9F1ADA40B82F97A0B7AD5D3B /* BytePacketDecoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BytePacketDecoder.m; path = BytePacket/BytePacketDecoder.m; sourceTree = "<group>"; };
 		7EE3A42B510FD837D4FD41596D3CB1FB /* BytePacketDecoderProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BytePacketDecoderProtocol.h; path = BytePacket/BytePacketDecoderProtocol.h; sourceTree = "<group>"; };
-		828A1C827821330900753693FCD7BEAB /* libPods-RTSPDecoder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-RTSPDecoder.a"; path = "libPods-RTSPDecoder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		828A1C827821330900753693FCD7BEAB /* libPods-RTSPDecoder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RTSPDecoder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8606990DBB4D93C0159D09D7BED9CF2A /* Pods-RTSPDecoder-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RTSPDecoder-frameworks.sh"; sourceTree = "<group>"; };
 		898EE84856EB5E52F00A964689E9F67E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E2AD9C97545FE4535896B43D36E17C9 /* BytePacket-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BytePacket-prefix.pch"; sourceTree = "<group>"; };
 		9EF15A6D87E47703F9A03AF47AF608D9 /* BytePacketDecoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BytePacketDecoder.h; path = BytePacket/BytePacketDecoder.h; sourceTree = "<group>"; };
 		B5D67AC30769732F1FF0BD1854B2E225 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		B6B34C727E7EDC293507104EA7A7B185 /* libCocoaAsyncSocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libCocoaAsyncSocket.a; path = libCocoaAsyncSocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6B34C727E7EDC293507104EA7A7B185 /* libCocoaAsyncSocket.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCocoaAsyncSocket.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC76A27B6AC5FF40DBB7B0E2B8BF8014 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		BC9D75EE8912902B55CEA8B9E28A9444 /* TimeOutHandle-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TimeOutHandle-dummy.m"; sourceTree = "<group>"; };
 		C055D895A6F212FEBF9DDCFC61AD6091 /* Pods-RTSPDecoder-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RTSPDecoder-dummy.m"; sourceTree = "<group>"; };
 		C6BD61BB45C22110D945E8CA701888E6 /* CocoaAsyncSocket-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-prefix.pch"; sourceTree = "<group>"; };
-		CCC9CFD6C5E621E2FD508BB923BB87DF /* libTimeOutHandle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libTimeOutHandle.a; path = libTimeOutHandle.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCC9CFD6C5E621E2FD508BB923BB87DF /* libTimeOutHandle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTimeOutHandle.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD8F41EA5561E6A890064EBA914A09C3 /* CocoaAsyncSocket-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CocoaAsyncSocket-dummy.m"; sourceTree = "<group>"; };
 		D1A3A39F23F92D366228150796205E8B /* Pods-RTSPDecoder-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RTSPDecoder-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D608CDC0690CF95D5FA2B5936684FB2A /* GCDAsyncSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncSocket.m; path = Source/GCD/GCDAsyncSocket.m; sourceTree = "<group>"; };
@@ -183,7 +183,6 @@
 				0CEAEBBDECF25FC4D51D3169683A277C /* GCDAsyncUdpSocket.m */,
 				8ACB267A2DA3D26AFC7B872E7DF7D8BD /* Support Files */,
 			);
-			name = CocoaAsyncSocket;
 			path = CocoaAsyncSocket;
 			sourceTree = "<group>";
 		};
@@ -218,17 +217,16 @@
 		6912F799139471E1BE8F8B838FA8B214 /* BytePacket */ = {
 			isa = PBXGroup;
 			children = (
+				FD1565166D97CBACC95003D06D48EBF0 /* BytePacketProtocol.h */,
 				4874E3A846075E21966C51AFC4C25864 /* BytePacket.h */,
 				28A4C082389A130570748773F9FC2D2E /* BytePacket.m */,
 				9EF15A6D87E47703F9A03AF47AF608D9 /* BytePacketDecoder.h */,
 				774947FB9F1ADA40B82F97A0B7AD5D3B /* BytePacketDecoder.m */,
 				7EE3A42B510FD837D4FD41596D3CB1FB /* BytePacketDecoderProtocol.h */,
-				FD1565166D97CBACC95003D06D48EBF0 /* BytePacketProtocol.h */,
 				02AB555C6C6B5031F4298B01A36DDC04 /* ByteTransfrom.h */,
 				ED6F6A2DF49BDC0D4CB2D19FDAEFBC69 /* ByteTransfrom.m */,
 				0B755803C7CD49B5EBBD33D60BD32501 /* Support Files */,
 			);
-			name = BytePacket;
 			path = BytePacket;
 			sourceTree = "<group>";
 		};
@@ -285,7 +283,6 @@
 				6262D36A523025420754ED09A227AE8D /* TimeOutHandleCenter.m */,
 				7B8BEEA088A6595B55B78228A8D9B1D1 /* Support Files */,
 			);
-			name = TimeOutHandle;
 			path = TimeOutHandle;
 			sourceTree = "<group>";
 		};

@@ -24,6 +24,7 @@
 - (BOOL)decodeWithError:(NSError *__autoreleasing *)error
 {
     NSInteger find = [ByteTransfrom findData:[self packEnd] firstPositionInData:self.encodeData];
+    NSInteger current = 0;
     if(find == -1)
     {
         if(error != NULL)
@@ -35,32 +36,33 @@
     
     NSData *responseData = [ByteTransfrom subdata:self.encodeData start:0 length:find+4];
     NSString *response = [[NSString alloc]initWithData:responseData encoding:NSUTF8StringEncoding];
+    current = find+4;
     if(!response)
     {
+        self.canBeSkippedLength = current;
         if(error != NULL)
         {
             *error = [NSError errorWithDomain:BytePacketErrorDomain code:BytePacketDefaultErrorCode userInfo:@{NSLocalizedDescriptionKey:@"Response数据解码失败"}];
         }
         return NO;
     }
-    self.encodeLength = find+4;
+    //remainData主要为获取doPlay后的粘包视频数据
+    if(self.encodeData.length > current)
+    {
+        NSData *remainData = [ByteTransfrom subdata:self.encodeData start:current length:self.encodeData.length - current];
+        self.remainData = remainData;
+        //此处不能执行：current = self.encodeData.length;
+    }
+    self.canBeSkippedLength = current;
     self.response = response;
     return YES;
 }
 
-- (NSData *)remainData
-{
-    if(!self.encodeData||!self.encodeData.length||!self.response||self.encodeLength >= self.encodeData.length)
-    {
-        return nil;
-    }
-    NSData *remainData = [ByteTransfrom subdata:self.encodeData start:self.encodeLength length:self.encodeData.length - self.encodeLength];
-    return remainData;
-}
 
 - (BOOL)encodeWithError:(NSError *__autoreleasing *)error
 {
     return NO;
 }
+
 
 @end

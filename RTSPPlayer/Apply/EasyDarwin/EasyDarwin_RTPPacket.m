@@ -21,6 +21,7 @@
 
 - (BOOL)decodeWithError:(NSError *__autoreleasing *)error
 {
+    
     NSInteger length = self.encodeData.length;
     if(length< 4)
     {
@@ -35,6 +36,7 @@
     current = find + 1;
     if(find == -1)
     {
+        self.canBeSkippedLength = length;
         if(error != NULL)
         {
             *error = [NSError errorWithDomain:BytePacketErrorDomain code:BytePacketDefaultErrorCode userInfo:@{NSLocalizedDescriptionKey:@"要解码的数据没有包含指定头"}];
@@ -66,7 +68,7 @@
     current += dataLength;
     self.channel = channel;
     self.rtpData = rtpData;
-    self.encodeLength = current;
+    self.canBeSkippedLength = current;
     
     return YES;
 }

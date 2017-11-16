@@ -74,27 +74,29 @@
         }
         return NO;
     }
+    self.canBeSkippedLength = length;
+    NSInteger payloadDataLength = length;
     if(p)
     {
         Byte *paddingLengthByte = (Byte *)[ByteTransfrom substr:self.encodeData start:length-2 length:1];
         unsigned short paddingLength = [ByteTransfrom highBytesToShortInt:paddingLengthByte];
-        length -= 1 + paddingLength;
-        if(length < current)
+        if(length != current + paddingLength + 1)
         {
             if(error != NULL)
             {
-                NSString *string = [NSString stringWithFormat:@"要解码的数据长度不足,padding数据不足"];
-                *error = [NSError errorWithDomain:BytePacketErrorDomain code:BytePacketLackDataErrorCode userInfo:@{NSLocalizedDescriptionKey:string}];
+                NSString *string = [NSString stringWithFormat:@"要解码的数据出现错误,padding数据区长度取值错误，包已损毁"];
+                *error = [NSError errorWithDomain:BytePacketErrorDomain code:BytePacketDefaultErrorCode userInfo:@{NSLocalizedDescriptionKey:string}];
             }
             return NO;
         }
+        //去除填充区
+        payloadDataLength -= paddingLength + 1;
     }
     //获取扩展数据
-    NSData *payloadData = [ByteTransfrom subdata:self.encodeData start:current length:length - current];
+    NSData *payloadData = [ByteTransfrom subdata:self.encodeData start:current length:payloadDataLength - current];
     self.x = x;
     self.cc = cc;
     self.numOfRemExtHdr = numOfRemExtHdr;
-    self.encodeLength = length;
     self.payloadData = payloadData;
     return YES;
     
